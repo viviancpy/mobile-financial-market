@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { StyleSheet, Text, View } from 'react-native'
-import { InputItem, WhiteSpace, WingBlank, Button, Icon } from 'antd-mobile'
+import { Grid, InputItem, WhiteSpace, WingBlank, Button, Icon } from 'antd-mobile'
 import PropTypes from 'prop-types'
 import autoBind from 'auto-bind'
 
@@ -35,9 +35,9 @@ export class QuoteSearch extends Component {
     return (
       <View>
         <WingBlank>
-          <InputItem placeholder="Company Ticker" onChange={this.handleQuoteSearchChanged}></InputItem>
+          <InputItem placeholder="Enter Company Ticker" onChange={this.handleQuoteSearchChanged}></InputItem>
         </WingBlank>
-        <WhiteSpace />
+
         <Button className="btn" icon="check-circle-o" onClick={this.handleQuoteSearchSubmit}>Search</Button>
         <Text>{status}</Text>
 

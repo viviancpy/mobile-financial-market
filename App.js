@@ -6,12 +6,12 @@ import rootReducer from './src/reducers'
 import quoteSearchSaga from './src/sagas/quoteSearchSaga';
 import createSagaMiddleware from 'redux-saga'
 import { AppRegistry, Text } from 'react-native';
-import { composeWithDevTools } from 'redux-devtools-extension';
 
 const sagaMiddleware = createSagaMiddleware();
+
 const store = createStore(
   rootReducer,
-  composeWithDevTools(
+  window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__(
       applyMiddleware(sagaMiddleware)
   )
 );

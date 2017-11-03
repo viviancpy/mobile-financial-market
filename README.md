@@ -105,6 +105,10 @@ When starting your project, you'll see something like this for your project URL:
 ```
 exp://192.168.0.2:19000
 ```
+<Note from Vivian>:
+Before running npm start or yarn start, I needed to run
+ipconfig and read the ipaddres ipv4 (10.0.0.102 at the time of this note) and run in cmd:
+setx REACT_NATIVE_PACKAGER_HOSTNAME 10.0.0.102 /M
 
 The "manifest" at that URL tells the Expo app how to retrieve and load your app's JavaScript bundle, so even if you load it in the app via a URL like `exp://localhost:19000`, the Expo client app will still try to retrieve your app at the IP address that the start script provides.
 

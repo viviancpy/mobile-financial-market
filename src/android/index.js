@@ -1,12 +1,13 @@
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
 import QuoteSearchContainer from './containers/QuoteSearchContainer';
+import MainScreenContainer from './containers/MainScreenContainer';
 
 export default class AndroidApp extends React.Component {
   render() {
     return (
       <View>
-        <QuoteSearchContainer />
+        <MainScreenContainer />
       </View>
     );
   }
