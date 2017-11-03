@@ -21,7 +21,7 @@ AppWithNavigationState.propTypes = {
 };
 
 const mapStateToProps = state => ({
-  nav: state.nav,
+  nav: state.navigationReducer,
 });
 
 export default connect(mapStateToProps)(AppWithNavigationState);

@@ -1,7 +1,7 @@
 import React from 'react'
 import { createStore, applyMiddleware } from 'redux'
 import { Provider } from 'react-redux'
-import AndroidApp from './src/android'
+import AppWithNavigationState from './src/navigators/AppNavigator'
 import rootReducer from './src/reducers'
 import quoteSearchSaga from './src/sagas/quoteSearchSaga';
 import createSagaMiddleware from 'redux-saga'
@@ -22,7 +22,7 @@ export default class App extends React.Component {
   render() {
     return (
        <Provider store={store}>
-         <AndroidApp />
+         <AppWithNavigationState />
        </Provider>
     );
   }
