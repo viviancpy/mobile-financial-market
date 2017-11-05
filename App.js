@@ -3,20 +3,22 @@ import { createStore, applyMiddleware } from 'redux'
 import { Provider } from 'react-redux'
 import AppWithNavigationState from './src/navigators/AppNavigator'
 import rootReducer from './src/reducers'
-import quoteSearchSaga from './src/sagas/quoteSearchSaga';
+import rootSaga from './src/sagas'
 import createSagaMiddleware from 'redux-saga'
 import { AppRegistry, Text } from 'react-native';
+import { composeWithDevTools } from 'redux-devtools-extension';
 
 const sagaMiddleware = createSagaMiddleware();
+const composeEnhancers = composeWithDevTools({ realtime: true, port: 19001 });
 
 const store = createStore(
   rootReducer,
-  window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__(
+  composeEnhancers(
       applyMiddleware(sagaMiddleware)
   )
 );
 
-sagaMiddleware.run(quoteSearchSaga);
+sagaMiddleware.run(rootSaga);
 
 export default class App extends React.Component {
   render() {
@@ -27,6 +29,9 @@ export default class App extends React.Component {
     );
   }
 }
+
+AppRegistry.registerComponent('App', () => App);
+
 //
 // import React from 'react';
 // import { StyleSheet, Text, View } from 'react-native';

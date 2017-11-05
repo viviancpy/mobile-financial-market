@@ -12,7 +12,7 @@ const fetchHistoricals = function* fetchCompany(quoteInput) {
 }
 
 const quoteSearchSaga = function* quoteSearchSaga() {
-  while(true) {
+  while(true){
     const {quoteInput} = yield take(Types.QUOTE_SEARCH_START);
     yield fork(fetchHistoricals, quoteInput, true)
   }
